@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.expense {
+  display: flex;
+  justify-content: space-around;
+}
+
+.expense-card {
+  width: 150px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
