@@ -10,8 +10,9 @@ function App() {
     <div className="App">
         <h1>Expense Tracker</h1>
         <Balance/>
-        <ExpenseList/>
         <AddExpense/>
+        <ExpenseList/>
+        
     </div>
     </ExpenseProvider>
   );

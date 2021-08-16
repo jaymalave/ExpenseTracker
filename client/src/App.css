@@ -1,15 +1,70 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.balance-section {
+  text-align: center;
+  font-size: 0.8rem;
+  border: 1px solid black;
+  margin: 4vh;
+}
+
+.add-btn {
+  width: 50%;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+/* .expense-list {
+  display: block;
+  margin: auto;
+} */
+
+.expense-main{
+  text-align: center;
+  margin: auto;
+  width: 70%;
+
+}
+
+.expense-card {
+  display: block;
+  margin: auto;
 }
 
 .expense {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.expense-card {
-  width: 150px;
-  text-align: center;
-  display: block;
-  margin: auto;
+.expense-form{
+  margin: 15px;
 }
+.name-input, .cost-input {
+  width: 80%;
+  height: 2rem;
+  margin: 1vh;
+}
+
+input[type="text"] {
+  font-size:20px;
+}
+
+input[type="number"] {
+  font-size:20px;
+}
+
+ .cost-prop{
+   border: 2px solid black;
+   width: 5rem;
+   height: 3rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+} 
+
+
+

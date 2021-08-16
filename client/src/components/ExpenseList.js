@@ -9,15 +9,10 @@ const ExpenseList = () => {
 
   
    return (
-    <div>
-    <h1>Hello</h1>
+    <div className="expense-list">
       {
-      
        expenses.map((expense) => (
-           <div>
-           <h1>This is an expense</h1>
            <Expense name={expense.name} cost={expense.cost}/>
-           </div>
        ))
       }
     </div>

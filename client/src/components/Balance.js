@@ -2,14 +2,9 @@ import React from 'react';
 
 const Balance = () => {
     return(
-      <>
-      <div>
-          Balance
+        <div className = "balance-section">
+      <h1>Your balance: 4300 Rs.</h1>
       </div>
-      <div>
-          4300 Rs.
-      </div>
-      </>
     );
 }
 
