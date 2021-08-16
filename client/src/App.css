@@ -26,18 +26,22 @@
 .expense-main{
   text-align: center;
   margin: auto;
-  width: 70%;
-
+  width: 80%;
 }
 
 .expense-card {
-  display: block;
-  margin: auto;
+  margin: 10px;
 }
 
 .expense {
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
+  border: 1px solid red;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-radius: 15px;
 }
 
 .expense-form{
@@ -57,14 +61,21 @@ input[type="number"] {
   font-size:20px;
 }
 
+.name-prop {
+  font-size: 1rem;
+}
+
  .cost-prop{
    border: 2px solid black;
+   border-radius: 15px;
    width: 5rem;
    height: 3rem;
    display: flex;
    justify-content: center;
    align-items: center;
 } 
+
+
 
 
 
