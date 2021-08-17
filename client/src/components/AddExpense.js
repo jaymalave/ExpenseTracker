@@ -5,7 +5,7 @@ const AddExpense = () => {
 
     const [expenseName, setExpenseName] = useState("")
     const [expenseCost, setExpenseCost] = useState("")
-    const [expenses, setExpenses] = useContext(ExpenseContext);
+    var [expenses, setExpenses] = useContext(ExpenseContext);
 
     const updateExpenseName = (e) => {
        setExpenseName(e.target.value);

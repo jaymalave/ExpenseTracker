@@ -11,7 +11,7 @@ export const ExpenseContext = createContext();
 
 //provider
 export const ExpenseProvider = (props) => {
-    const [expenses, setExpenses] = useState([]);
+    var [expenses, setExpenses] = useState([]);
     return (
       <ExpenseContext.Provider value={[expenses, setExpenses]}>
       {props.children}

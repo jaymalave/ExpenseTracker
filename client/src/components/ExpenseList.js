@@ -5,7 +5,7 @@ import {ExpenseContext} from '../context/ExpenseContext';
 
 const ExpenseList = () => {
 
-    const [expenses, setExpenses] = useContext(ExpenseContext);
+    var [expenses, setExpenses] = useContext(ExpenseContext);
 
   
    return (

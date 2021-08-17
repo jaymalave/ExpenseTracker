@@ -21,6 +21,7 @@
   color: aliceblue;
   border: 2px ridge red;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 /* .expense-list {
@@ -57,6 +58,7 @@
   width: 80%;
   height: 2rem;
   margin: 1vh;
+  border-radius: 10px;
 }
 
 input[type="text"] {
@@ -74,8 +76,8 @@ input[type="number"] {
  .cost-prop{
    border: 2px solid black;
    border-radius: 15px;
-   width: 5rem;
-   height: 3rem;
+   width: 4.5rem;
+   height: 2.5rem;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -91,6 +93,7 @@ input[type="number"] {
    color: aliceblue;
    border: 5px inset orange;
    border-radius: 10px;
+   cursor: pointer;
 }
 
 
