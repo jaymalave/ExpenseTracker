@@ -17,6 +17,10 @@
   width: 50%;
   height: 50px;
   font-size: 1.2rem;
+  background-color: black;
+  color: aliceblue;
+  border: 2px ridge red;
+  border-radius: 15px;
 }
 
 /* .expense-list {
@@ -43,6 +47,7 @@
   padding-left: 10px;
   padding-top: 5px;
   border-radius: 15px;
+  align-items: center;
 }
 
 .expense-form{
@@ -75,6 +80,18 @@ input[type="number"] {
    justify-content: center;
    align-items: center;
 } 
+
+.del-btn {
+  margin: 5px;
+   padding: 2px;
+   height: 40px;
+   width: 65px;
+   font-size: 20px;
+   background-color: black;
+   color: aliceblue;
+   border: 5px inset orange;
+   border-radius: 10px;
+}
 
 
 

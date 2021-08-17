@@ -23,8 +23,8 @@ const AddExpense = () => {
     return (
       <div className="expense-form">
       <form onSubmit={addExpense}>
-        <input type="text" value={expenseName} name="expense-name" onChange={updateExpenseName} className='name-input'/>
-        <input type="number" value={expenseCost} name="expense-cost" onChange={updateExpenseCost} className='cost-input'/>
+        <input type="text" value={expenseName} name="expense-name" onChange={updateExpenseName} className='name-input' required/>
+        <input type="number" value={expenseCost} name="expense-cost" onChange={updateExpenseCost} className='cost-input' required/>
         <button type="submit" className='add-btn'>Add Expense</button>
       </form>
       </div>
