@@ -12,7 +12,8 @@ const ExpenseList = () => {
     <div className="expense-list">
       {
        expenses.map((expense) => (
-           <Expense name={expense.name} cost={expense.cost}/>
+  
+           <Expense key={Math.random()} name={expense.name} cost={expense.cost}/>
        ))
       }
     </div>

@@ -4,6 +4,7 @@ import React, {useState, createContext} from "react";
 export const ExpenseContext = createContext();
 
 
+
 //provider
 export const ExpenseProvider = (props) => {
     const [expenses, setExpenses] = useState([]);
