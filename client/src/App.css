@@ -37,11 +37,12 @@
 
 .expense-card {
   margin: 10px;
+  font-size: 0.8rem;
 }
 
 .expense {
   width: 95%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
   border: 1px solid red;
