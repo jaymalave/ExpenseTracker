@@ -1,14 +1,15 @@
 var express = require('express')
 const ExpenseDoc = require('./models/expenses')
 const mongoose = require('mongoose')
+const cors = require('cors')
 require('dotenv/config')
 var app = express()
-const PORT = 8000
+const PORT_NO = 8000 || process.env.PORT
 
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({extended: true}))
-
+app.use(cors())
 
 mongoose.connect(
     process.env.DB_CON,
@@ -37,6 +38,6 @@ app.post('/addexpense', async (req, res) => {
     res.end()
 })
 
-app.listen(PORT, () => {
+app.listen(PORT_NO, () => {
     console.log("Server is up and running");
 })
