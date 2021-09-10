@@ -28,8 +28,12 @@ const AddExpense = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ name: "Books", cost: 500 }),
-    }).then(() => {
+    }).then((response) => {
+      if(response.ok){
       console.log("fetch working");
+      }else{
+        throw new Error('HTTP Error' + response.status)
+      }
     });
   };
 
