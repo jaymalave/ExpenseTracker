@@ -14,6 +14,7 @@ const Expense = ({name, cost}) => {
     console.log(name)
     // console.log(expenses.length)
     expenses = expenses.filter(_expense => _expense.name !== name)
+    setExpenses(expenses)
     console.log(expenses)
   }
 
