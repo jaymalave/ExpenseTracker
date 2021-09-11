@@ -8,8 +8,10 @@ const PORT_NO = 8000 || process.env.PORT
 
 const bodyParser = require('body-parser')
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+
+// app.use(cors())
 
 mongoose.connect(
     process.env.DB_CON,
@@ -27,15 +29,16 @@ app.get('/', (req, res) => {
 })
 
 app.post('/addexpense', async (req, res) => {
+    const {name, cost} = req.body
     const expense = new ExpenseDoc(
         {
-            name: req.body.name, 
-            cost: req.body.cost
+            name,
+            cost
         }
     )
-    const savedExpense = await expense.save()
-    console.log(savedExpense)
-    res.end()
+    await expense.save()
+    // console.log(savedExpense)
+    console.log({name, cost})
 })
 
 app.listen(PORT_NO, () => {

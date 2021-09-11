@@ -21,20 +21,19 @@ const AddExpense = () => {
       { name: expenseName, cost: expenseCost },
     ]);
 
+     
     fetch("http://localhost:8000/addexpense", {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        // "Accept": "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: "Books", cost: 500 }),
-    }).then((response) => {
-      if(response.ok){
-      console.log("fetch working");
-      }else{
-        throw new Error('HTTP Error' + response.status)
-      }
-    });
+      body:  {name: "Books", cost: 500 },
+    })
+    
+    // const content = await rawResponse.JSON();
+
+    // console.log(content);
   };
 
   return (
