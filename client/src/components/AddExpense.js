@@ -28,7 +28,7 @@ const AddExpense = () => {
         // "Accept": "application/json",
         "Content-Type": "application/json",
       },
-      body:  {name: "Books", cost: 500 },
+      body:  JSON.stringify({ name: expenseName, cost: expenseCost }),
     })
     
     // const content = await rawResponse.JSON();

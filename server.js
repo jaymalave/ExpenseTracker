@@ -8,10 +8,10 @@ const PORT_NO = 8000 || process.env.PORT
 
 const bodyParser = require('body-parser')
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
-// app.use(cors())
 
 mongoose.connect(
     process.env.DB_CON,
