@@ -24,8 +24,9 @@ mongoose.connect(
     }
   );
 
-app.get('/', (req, res) => {
-   res.send("Backend working")
+app.get('/', async (req, res) => {
+   const allData = await ExpenseDoc.find()
+   res.json({"message": "blank route GET request working"})
 })
 
 app.post('/addexpense', async (req, res) => {
