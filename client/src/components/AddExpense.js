@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ExpenseContext } from "../context/ExpenseContext";
+import {axios} from 'axios';
 
 const AddExpense = () => {
   const [expenseName, setExpenseName] = useState("");
@@ -14,27 +15,48 @@ const AddExpense = () => {
     setExpenseCost(e.target.value);
   };
 
-  const addExpense = (e) => {
+  const addExpense = async (e) => {
     e.preventDefault();
-    setExpenses((prevExpenses) => [
-      ...prevExpenses,
-      { name: expenseName, cost: expenseCost },
-    ]);
+
+    let expense = {
+      name: expenseName, 
+      cost: expenseCost
+    }
+
 
      
-    fetch("http://localhost:8000/addexpense", {
-      method: "POST",
-      headers: {
-       // "Accept": "application/json",
-        "Content-Type": "application/json",
-      },
-      body:  JSON.stringify({ name: expenseName, cost: expenseCost }),
-    })
+    // fetch("http://localhost:8000/addexpense", {
+    //   method: "POST",
+    //   headers: {
+    //    // "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body:  JSON.stringify({ name: expenseName, cost: expenseCost }),
+    // })
     
     // const content = await rawResponse.JSON();
 
     // console.log(content);
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
+    try {
+      const res = await axios.post('api/v1/transactions', expense, config); 
+    } catch (err) {
+      console.log(err);
+    }
+  
+    setExpenses((prevExpenses) => [
+      ...prevExpenses,
+      expense,
+    ]);
+  
   };
+
+
 
   return (
     <div className="expense-form">

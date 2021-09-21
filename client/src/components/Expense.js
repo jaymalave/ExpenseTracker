@@ -1,8 +1,9 @@
 import React, {useContext, useEffect} from "react";
+import {axios} from 'axios';
 
 import {ExpenseContext} from '../context/ExpenseContext';
 
-const Expense = ({name, cost}) => {
+const Expense = ({name, cost, key}) => {
 
   var [expenses, setExpenses] = useContext(ExpenseContext);
   // const { deleteExpense } = useContext(ExpenseContext);
@@ -10,12 +11,17 @@ const Expense = ({name, cost}) => {
   // function deleteHandler(){
   //      deleteExpense();
   // }
-  function deleteExpense(){
-    console.log(name)
-    // console.log(expenses.length)
-    expenses = expenses.filter(_expense => _expense.name !== name)
-    setExpenses(expenses)
-    console.log(expenses)
+  async function deleteExpense(id){
+    // console.log(name)
+    // // console.log(expenses.length)
+    // expenses = expenses.filter(_expense => _expense.name !== name)
+    // setExpenses(expenses)
+    // console.log(expenses)
+    try {
+       await axios.delete(`/api/v1/transactions/${id}`)
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 
@@ -33,7 +39,7 @@ const Expense = ({name, cost}) => {
         <div className="cost-prop">
           <h3>{cost}</h3>
         </div>
-        <button className='del-btn' onClick={deleteExpense}>X</button>
+        <button className='del-btn' onClick={deleteExpense(key)}>X</button>
       </div>
     </div>
     </div>

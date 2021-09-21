@@ -1,21 +1,29 @@
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import Expense from "./Expense";
-import {ExpenseContext} from '../context/ExpenseContext';
+import { ExpenseContext } from "../context/ExpenseContext";
+import { axios } from "axios";
 
+const ExpenseList = async () => {
+  var [expenses, setExpenses] = useContext(ExpenseContext);
 
-const ExpenseList = () => {
-
-    var [expenses, setExpenses] = useContext(ExpenseContext);
+  try {
+    const res = await axios.get("/api/v1/transactions");
+    setExpenses(res.data.data);
+  } catch (err) {
+    console.log(err);
+  }
+ 
+  useEffect(() => {
+     console.log("just to refresh the page");
+  }, [expenses]);
 
   
-   return (
+
+  return (
     <div className="expense-list">
-      {
-       expenses.map((expense) => (
-  
-           <Expense key={Math.random()} name={expense.name} cost={expense.cost}/>
-       ))
-      }
+      {expenses.map((expense) => (
+        <Expense key={expense._id} name={expense.name} cost={expense.cost} />
+      ))}
     </div>
   );
 };
